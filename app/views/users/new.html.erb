@@ -1,0 +1,21 @@
+<h1>ユーザー新規登録</h1>
+
+<%= form_with model: @user, local: true, data: { turbo: false } do |f| %>
+  <div class="field">
+    <%= f.label "名前" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "メールアドレス" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "パスワード" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit "新規登録" %>
+  </div>
+<% end %>
+
+<%= link_to 'トップページへ戻る', root_path, data: { turbo: false } %>
