@@ -8,7 +8,7 @@ docker compose build --no-cache
 docker compose run web rails db:create
 ```
 
-- Railsアプリケーションの作成
+- Railsアプリケーションの作成（初回）
 
 ```
 docker-compose run web rails new .  --force --database=mysql
@@ -61,8 +61,8 @@ docker compose restart
 
 name|version
 --|--
-Ruby | 3.2.0
-Ruby on Rails | 7.0.8
+Ruby | 3.2.3
+Ruby on Rails | 7.1.3
 
 ### 導入済みgem
 
