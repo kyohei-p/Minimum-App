@@ -11,6 +11,11 @@
   </head>
 
   <body>
+     <div>
+      <% flash.each do |message_type, message| %>
+        <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% end %>
+     </div>
      <div id="nav">
       <% if logged_in? %>
         <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %>
