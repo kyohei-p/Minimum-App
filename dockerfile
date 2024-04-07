@@ -1,5 +1,7 @@
 FROM ruby:3.2.3
 
+RUN apt-get update -qq && apt-get install -y default-mysql-client
+
 RUN mkdir /minapp
 WORKDIR /minapp
 COPY Gemfile /minapp/Gemfile
