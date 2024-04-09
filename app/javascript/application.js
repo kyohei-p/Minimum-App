@@ -1,3 +1,9 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
+import $ from 'jquery';
+import "jquery-ujs";
+import "@hotwired/turbo-rails";
+import "controllers";
+
+$(function() {
+  $('.flash-message').fadeOut(4000);
+  console.log($('.flash-message'));
+});

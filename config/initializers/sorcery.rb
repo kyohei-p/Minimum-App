@@ -309,7 +309,7 @@ Rails.application.config.sorcery.configure do |config|
     # change default remember_me_token attribute.
     # Default: `:remember_me_token`
     #
-    # user.remember_me_token_attribute_name =
+    # user.remember_me_token_at tribute_name =
 
     # change default remember_me_token_expires_at attribute.
     # Default: `:remember_me_token_expires_at`
@@ -319,7 +319,7 @@ Rails.application.config.sorcery.configure do |config|
     # How long in seconds the session length will be
     # Default: `60 * 60 * 24 * 7`
     #
-    user.remember_me_for = 604800
+    user.remember_me_for = 86400
 
     # When true, sorcery will persist a single remember me token for all
     # logins/logouts (to support remembering on multiple browsers simultaneously).
