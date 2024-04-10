@@ -8,19 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
 
   <body>
-     <div>
-      <% flash.each do |message_type, message| %>
-        <div class="flash-message <%= message_type %>"><%= message %></div>
-      <% end %>
-     </div>
-     <div id="nav">
+    <% flash.each do |message_type, message| %>
+      <div class="flash-message <%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+    <div id="nav">
       <% if logged_in? %>
-        <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %>
+        <%= link_to "ログアウト", logout_path, data: { method: :delete, turbo: false } %>
       <% else %>
         <%= link_to "新規登録", new_user_path %> |
         <%= link_to "ログイン", login_path %>

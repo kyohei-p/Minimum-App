@@ -15,3 +15,8 @@
   color: #930403;
   border: solid 1px #930403;
 }
+
+/* JavaScriptで非表示にする場合（仮） */
+/* .hide{
+  display: none;
+} */
