@@ -5,5 +5,5 @@ import "controllers";
 
 $(function() {
   $('.flash-message').fadeOut(4000);
-  console.log($('.flash-message'));
+  window.location.reload();
 });
