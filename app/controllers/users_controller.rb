@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     result = Geocoder.search(@user.address).first
+    
     if result
       @user.latitude = result.latitude
       @user.longitude = result.longitude
