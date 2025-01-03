@@ -5,6 +5,12 @@
     <%= f.label "名前" %><br />
     <%= f.text_field :name %>
   </div>
+
+  <div>
+    <%= f.label :address, "住所" %><br>
+    <%= f.text_field :address, id: 'address-input' %>
+  </div>
+
   <div class="field">
     <%= f.label "メールアドレス" %><br />
     <%= f.text_field :email %>
@@ -19,3 +25,17 @@
 <% end %>
 
 <%= link_to 'トップページへ戻る', root_path, data: { turbo: false } %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['PLACES_API_KEY'] %>&libraries=places"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const addressInput = document.getElementById('address-input');
+    const autocomplete = new google.maps.places.Autocomplete(addressInput);
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      const place = autocomplete.getPlace();
+      addressInput.value = place.formatted_address;
+    });
+  });
+</script>
