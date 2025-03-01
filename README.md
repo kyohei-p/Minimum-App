@@ -69,3 +69,22 @@ Ruby on Rails | 7.1.3
 - [pry-rails](https://github.com/pry/pry-rails)
 - [rspec-rails](https://github.com/rspec/rspec-rails)
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
+
+### トラブルシューティング
+#### ActiveSupport::MessageEncryptor::InvalidMessage
+
+1. 既存のcredentials.yml.encを削除する
+`Minimum-App/config/credentials.yml.enc`
+> [!WARNING]
+> master.keyは必須です。
+
+2. 以下のコマンドを実行し、credential.yml.encを再作成する
+```
+docker compose run -e EDITOR=vim web rails credentials:edit
+```
+
+3. 以下のようにターミナルで表示されたら、コンテナ再起動してブラウザを再表示
+```
+Editing config/credentials.yml.enc...
+File encrypted and saved.
+```
